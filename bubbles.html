@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title>Graph</title>
+  <style>
+text {
+  font: 10px sans-serif;
+}
+  </style>
+</head>
+
+<body>
+
+  <script src="count.js"></script>
+  <script src="keys.js"></script>
+  <script src="detectName.js"></script>
+  
+  <script>
+  var root = {"name": "flare", "children": []};
+  
+  for (var i = 0; i < count.length; i++) {
+      root.children.push({
+	      name: detectName(keys[i]),
+	      value: count[i],
+		  title: keys[i]
+	  });
+  }
+  </script>
+  
+  <script src="libs/draw.js"></script>
+  <script src="libs/d3.v3.min.js"></script>
+
+  <script>
+    drawBubbleChart(root);
+  </script>
+
+</body>
+</html>
